@@ -1,0 +1,70 @@
+/* Базові налаштування кольорів згідно з макетом */
+body {
+    background-color: #f8f9f5; /* Світло-бежевий фон */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Стилізація шапки */
+.main-header {
+    background-color: #1c4433; /* Темно-зелений */
+    color: white;
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.main-header h1 {
+    font-family: serif;
+}
+
+/* Налаштування зображень в галереї */
+.gallery-img {
+    height: 280px; /* Фіксована висота, щоб сітка була рівною */
+    object-fit: cover; /* Зображення заповнює блок без спотворення пропорцій */
+    cursor: pointer;
+    transition: transform 0.4s ease; /* Плавність ефекту наведення */
+}
+
+/* Ефект збільшення при наведенні миші */
+.gallery-img:hover {
+    transform: scale(1.08);
+}
+
+/* Стилізація кнопки */
+.btn-kupita {
+    background-color: #1c4433;
+    color: white;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-kupita:hover {
+    background-color: #143325;
+    color: white;
+    transform: translateY(-3px); /* Кнопка трохи піднімається вгору */
+}
+
+/* =========================================
+   ЛОГІКА АНІМАЦІЙ (Каскадна поява)
+   ========================================= */
+
+/* Базовий клас для елементів, що з'являються */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px); /* Елемент починає рух трохи знизу */
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Затримки для створення каскадного ефекту (ряд за рядом) */
+.delay-1 { animation-delay: 0.1s; } /* Перший ряд */
+.delay-2 { animation-delay: 0.3s; } /* Другий ряд */
+.delay-3 { animation-delay: 0.5s; } /* Третій ряд */
+.delay-4 { animation-delay: 0.7s; } /* Кнопка внизу */
+
+/* Сама анімація підняття та прояву */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
